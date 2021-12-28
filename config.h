@@ -15,6 +15,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#define EE_HANDS
+
 #pragma once
 
 #define IGNORE_MOD_TAP_INTERRUPT
@@ -22,7 +24,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef TAPPING_TERM
 #define TAPPING_TERM 240
 #define RETRO_TAPPING
-
 
 #undef MOUSEKEY_DELAY
 #define MOUSEKEY_DELAY 5
