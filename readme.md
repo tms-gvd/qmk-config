@@ -3,24 +3,24 @@ My 34 key QWERTY Ferris Sweep keymap, based on Ben Vallack's ![keymap](https://g
 
 
 
-### Layer 0: Base layer
+### Layer 0: Base
 
-![Layer 0](https://i.imgur.com/tP7yiMC.png)
+![Layer 0](https://i.imgur.com/dMpNn6E.png)
 
 
 ### Layer 1: Symbols
 
-![layer_1](https://i.imgur.com/PRqPuFG.png)
+![layer_1](https://i.imgur.com/V5XseKX.png)
 
 
 ### Layer 2: Navigation
 
-![layer_2](https://i.imgur.com/o3JFz0D.png)
+![layer_2](https://i.imgur.com/AwnNq2H.png)
 
 
 ### Layer 3: Mouse
-TODO
-![layer_3](https://i.imgur.com/hIJvOrY.png)
+
+![layer_3](https://i.imgur.com/sPzMTUI.png)
 
 
 
