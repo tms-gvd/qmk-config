@@ -5,7 +5,7 @@ My 34 key QWERTY Ferris Sweep keymap, based on Ben Vallack's ![keymap](https://g
 
 ### Layer 0: Base
 
-![Layer 0](https://i.imgur.com/dMpNn6E.png)
+![Layer 0](https://i.imgur.com/0lXmYeq.png)
 
 
 ### Layer 1: Symbols
