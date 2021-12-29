@@ -15,12 +15,12 @@ My 34 key QWERTY Ferris Sweep keymap, based on Ben Vallack's ![keymap](https://g
 
 ### Layer 2: Navigation
 
-![layer_2](https://i.imgur.com/AwnNq2H.png)
+![layer_2](https://i.imgur.com/z7fTtMg.png)
 
 
 ### Layer 3: Mouse
 
-![layer_3](https://i.imgur.com/sPzMTUI.png)
+![layer_3](https://i.imgur.com/TSum85R.png)
 
 
 
