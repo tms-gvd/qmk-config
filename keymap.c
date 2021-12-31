@@ -3,14 +3,14 @@
 enum tap_dance_codes {
   DANCE_01,
   DANCE_02,
-  DANCE_03,
-  DANCE_04,
+//  DANCE_03, UNUSED
+//  DANCE_04, UNUSED
   DANCE_05,
   DANCE_06,
   DANCE_15,
   DANCE_31,
   DANCE_32,
-  DANCE_33,
+//  DANCE_33, UNUSED
   DANCE_54,
   DANCE_55,
   DANCE_56,
@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //  ----------------------------------------------------------------------------------------      ---------------------------------------------------------------------------------------
       KC_A,   KC_S,   KC_D,   KC_F,   KC_G,                                                         KC_H,   KC_J,   KC_K,   KC_L,   TD(DANCE_02),
   //  ----------------------------------------------------------------------------------------      ---------------------------------------------------------------------------------------
-      MT(MOD_LGUI,KC_Z),   KC_X,   KC_C,   KC_V,   KC_B,                                            KC_N,   KC_M,   TD(DANCE_03),   TD(DANCE_04),  TD(DANCE_05),
+      MT(MOD_LGUI,KC_Z),   KC_X,   KC_C,   KC_V,   KC_B,                                            KC_N,   KC_M,   KC_COMM,   KC_DOT,  TD(DANCE_05),
   //  ----------------------------------------------------------------------------------------      ---------------------------------------------------------------------------------------
       MT(MOD_LALT,KC_SPACE), OSM(MOD_LSFT),                                                         MT(MOD_RCTL,KC_ENT), TO(1)
   //  ----------------------------------------------------------------------------------------      ---------------------------------------------------------------------------------------
@@ -38,11 +38,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [1] = LAYOUT(
   //  ----------------------------------------------------------------------------------------      ---------------------------------------------------------------------------------------
-      KC_ESC,  KC_AT,  LSFT(KC_3),   TD(DANCE_31),   KC_PERC,                                    KC_CIRC,    KC_AMPR,    KC_ASTR,    KC_SCOLON,    KC_BSPC,
+      KC_ESC,  KC_AT,  LSFT(KC_3),   TD(DANCE_31),   KC_PERC,                                       KC_CIRC,    KC_AMPR,    KC_ASTR,    KC_SCOLON,    KC_BSPC,
   //  ----------------------------------------------------------------------------------------      ---------------------------------------------------------------------------------------
       KC_TAB, KC_EQL,   LALT(KC_RBRACKET),   LALT(LSFT(KC_RBRACKET)),   TD(DANCE_32),               TD(BKSL_HME),    LSFT(KC_LBRC),    LSFT(KC_RBRC),    TD(PIPE_END),   KC_ENTER,
   //  ----------------------------------------------------------------------------------------      ---------------------------------------------------------------------------------------
-      KC_TILD, TD(DANCE_33),  LALT(KC_LBRACKET),  LALT(LSFT(KC_LBRACKET)),  KC_DQUO,                KC_LBRC,  KC_LPRN,  KC_RPRN,  KC_RBRC,  TO(2),
+      KC_TILD, LALT(LSFT(KC_2)),  KC_NO,  KC_NO,  KC_NO,                                            KC_LBRC,  KC_LPRN,  KC_RPRN,  KC_RBRC,  TO(2),
   //  ----------------------------------------------------------------------------------------      ---------------------------------------------------------------------------------------
       TO(0),  OSM(MOD_LSFT),                                                                        KC_RALT, TO(3)
   //  ----------------------------------------------------------------------------------------      ---------------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [2] = LAYOUT(
   //  ----------------------------------------------------------------------------------------      ---------------------------------------------------------------------------------------
-      KC_ESC,  LSFT(KC_2),  LSFT(KC_3),  LSFT(KC_4),  LSFT(KC_MINS),                             KC_MINS,   KC_7,  KC_8,  KC_9,  KC_TRANSPARENT,
+      KC_ESC,  LSFT(KC_2),  LSFT(KC_3),  LSFT(KC_4),  LSFT(KC_MINS),                                KC_MINS,   KC_7,  KC_8,  KC_9,  KC_BSPC,
   //  ----------------------------------------------------------------------------------------      ---------------------------------------------------------------------------------------
       KC_TAB, KC_TRANSPARENT, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP,  LSFT(KC_EQL),                    KC_EQL,    KC_4,  KC_5,  KC_6,  KC_ENTER,
   //  ----------------------------------------------------------------------------------------      ---------------------------------------------------------------------------------------
@@ -330,7 +330,7 @@ void dance_05_finished(qk_tap_dance_state_t *state, void *user_data) {
   dance_state.step = dance_05_dance_step(state);
   switch (dance_state.step) {
     case SINGLE_TAP: register_code16(KC_SLASH); break;
-    case SINGLE_HOLD: register_code16(S(KC_MINS)); break;
+    case SINGLE_HOLD: register_code16(S(KC_1)); break;
     case DOUBLE_TAP: register_code16(KC_SLASH); break;
     case DOUBLE_SINGLE_TAP: tap_code16(KC_SLASH);
   }
@@ -340,7 +340,7 @@ void dance_05_reset(qk_tap_dance_state_t *state, void *user_data) {
   wait_ms(10);
   switch (dance_state.step) {
     case SINGLE_TAP: unregister_code16(KC_SLASH); break;
-    case SINGLE_HOLD: unregister_code16(S(KC_MINS)); break;
+    case SINGLE_HOLD: unregister_code16(S(KC_1)); break;
     case DOUBLE_TAP: unregister_code16(KC_SLASH); break;
     case DOUBLE_SINGLE_TAP: unregister_code16(KC_SLASH); break;
   }
@@ -1100,14 +1100,14 @@ void pipe_end_reset(qk_tap_dance_state_t *state, void *user_data) {
 qk_tap_dance_action_t tap_dance_actions[] = {
   [DANCE_01] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_01, dance_01_finished, dance_01_reset),
   [DANCE_02] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_02, dance_02_finished, dance_02_reset),
-  [DANCE_03] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_03, dance_03_finished, dance_03_reset),
-  [DANCE_04] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_04, dance_04_finished, dance_04_reset),
+//  [DANCE_03] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_03, dance_03_finished, dance_03_reset),
+//  [DANCE_04] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_04, dance_04_finished, dance_04_reset),
   [DANCE_05] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_05, dance_05_finished, dance_05_reset),
   [DANCE_06] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_06, dance_06_finished, dance_06_reset),
   [DANCE_15] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_15, dance_15_finished, dance_15_reset),
   [DANCE_31] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_31, dance_31_finished, dance_31_reset),
   [DANCE_32] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_32, dance_32_finished, dance_32_reset),
-  [DANCE_33] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_33, dance_33_finished, dance_33_reset),
+//  [DANCE_33] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_33, dance_33_finished, dance_33_reset),
   [DANCE_54] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_54, dance_54_finished, dance_54_reset),
   [DANCE_55] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_55, dance_55_finished, dance_55_reset),
   [DANCE_56] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_56, dance_56_finished, dance_56_reset),

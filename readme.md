@@ -5,22 +5,22 @@ My 34 key QWERTY Ferris Sweep keymap, based on Ben Vallack's ![keymap](https://g
 
 ### Layer 0: Base
 
-![Layer 0](https://i.imgur.com/0lXmYeq.png)
+![Layer 0](https://i.imgur.com/hwLtJIW.png)
 
 
 ### Layer 1: Symbols
 
-![layer_1](https://i.imgur.com/V5XseKX.png)
+![layer_1](https://i.imgur.com/wxSqMQr.png)
 
 
 ### Layer 2: Navigation
 
-![layer_2](https://i.imgur.com/9ixYJNq.png)
+![layer_2](https://i.imgur.com/ZauMu1Y.png)
 
 
 ### Layer 3: Mouse
 
-![layer_3](https://i.imgur.com/o4LF1sC.png)
+![layer_3](https://i.imgur.com/DusQAKF.png)
 
 
 
