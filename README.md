@@ -31,7 +31,6 @@ There is also a RESET button on layer 2
 
 
 QMK Docs:
-* https://beta.docs.qmk.fm
 * https://docs.qmk.fm/
 
 Keyboard layout editor:
