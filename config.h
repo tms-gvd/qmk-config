@@ -41,10 +41,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define USB_SUSPEND_WAKEUP_DELAY 0
 #undef MOUSEKEY_WHEEL_INTERVAL
 #define MOUSEKEY_WHEEL_INTERVAL 83
-
-#undef MOUSEKEY_WHEEL_INTERVAL
-#define MOUSEKEY_WHEEL_INTERVAL 83
-
 #undef MOUSEKEY_WHEEL_MAX_SPEED
 #define MOUSEKEY_WHEEL_MAX_SPEED 3
-
