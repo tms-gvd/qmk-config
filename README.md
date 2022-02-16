@@ -1,5 +1,4 @@
-My 34 key QWERTY Ferris Sweep keymap, based on Ben Vallack's ![keymap](https://github.com/benvallack/34-QMK-Ferris-Sweep)
-=========================================================================================================================
+## My 34 key QWERTY Ferris Sweep keymap, based on Ben Vallack's ![keymap](https://github.com/benvallack/34-QMK-Ferris-Sweep)
 
 
 
