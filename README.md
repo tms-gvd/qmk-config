@@ -1,6 +1,10 @@
 ## My 34 key QWERTY Ferris Sweep keymap, based on ![Ben Vallack's](https://github.com/benvallack/34-QMK-Ferris-Sweep) keymap
 
 
+keymap compile status:  
+[![Docker repository on Quay](https://quay.io/repository/lcasper/34-qmk-ferris-sweep/status "Docker Repository on Quay")](https://quay.io/repository/lcasper/34-qmk-ferris-sweep)
+
+
 
 ### Layer 0: Base
 
@@ -30,6 +34,7 @@ Pressing and holding down the col 0 row 0 key when plugging in the keyboard make
 There is also a RESET button on layer 2
 
 
+
 QMK Docs:
 * https://docs.qmk.fm/
 
@@ -37,5 +42,3 @@ Keyboard layout editor:
 * http://www.keyboard-layout-editor.com
 
 
-
-[![keymap compile status](https://quay.io/repository/lcasper/34-qmk-ferris-sweep/status "Docker Repository on Quay")](https://quay.io/repository/lcasper/34-qmk-ferris-sweep)
