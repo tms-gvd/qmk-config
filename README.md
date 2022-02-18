@@ -35,3 +35,7 @@ QMK Docs:
 
 Keyboard layout editor:
 * http://www.keyboard-layout-editor.com
+
+
+
+[![keymap compile status](https://quay.io/repository/lcasper/34-qmk-ferris-sweep/status "Docker Repository on Quay")](https://quay.io/repository/lcasper/34-qmk-ferris-sweep)
