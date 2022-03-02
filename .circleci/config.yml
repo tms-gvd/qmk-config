@@ -8,6 +8,9 @@ jobs:
     working_directory: /app
     docker:
       - image: docker:17.09.0-ce-git
+    filters:
+      branches:
+        only: circleci
     steps:
       - checkout
       - setup_remote_docker
