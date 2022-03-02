@@ -4,8 +4,8 @@
 keymap compile status on Quay.io:  
 [![Docker repository on Quay](https://quay.io/repository/lcasper/34-qmk-ferris-sweep/status "Docker Repository on Quay")](https://quay.io/repository/lcasper/34-qmk-ferris-sweep)
 
-keymap compile status on CircleCI:
-[![lassieee](https://circleci.com/gh/lassieee/34-QMK-Ferris-Sweep.svg?style=shield)](https://app.circleci.com/pipelines/github/lassieee/34-QMK-Ferris-Sweep?branch=dev)
+keymap compile status on CircleCI:  
+[![lassieee](https://circleci.com/gh/lassieee/34-QMK-Ferris-Sweep.svg?style=shield)](https://circleci.com/gh/lassieee/34-QMK-Ferris-Sweep)
 
 
 
