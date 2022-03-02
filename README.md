@@ -1,8 +1,12 @@
 ## My 34 key QWERTY Ferris Sweep keymap, based on ![Ben Vallack's](https://github.com/benvallack/34-QMK-Ferris-Sweep) keymap
 
 
-keymap compile status:  
+keymap compile status on Quay.io:  
 [![Docker repository on Quay](https://quay.io/repository/lcasper/34-qmk-ferris-sweep/status "Docker Repository on Quay")](https://quay.io/repository/lcasper/34-qmk-ferris-sweep)
+
+keymap compile status on CircleCI:  
+[![CircleCI](https://circleci.com/gh/lassieee/34-QMK-Ferris-Sweep/tree/dev.svg?style=shield&circle-token=323dc44e5590a9cb161f4ad7d3a6ea98ee515d45)](https://circleci.com/gh/lassieee/34-QMK-Ferris-Sweep/tree/dev)
+
 
 
 
