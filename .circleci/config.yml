@@ -1,8 +1,4 @@
 version: 2.1
-general:
-  branches:
-    only:
-      - circleci
 jobs:
   build:
     working_directory: /app
