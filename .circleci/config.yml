@@ -31,7 +31,7 @@ jobs:
       #    paths:
       #      - /caches/app.tar
       - run:
-          name: 1
+          name: do stuff
           command: |
             cd /app;
             docker run -d --rm --name qmk qmkfm/qmk_firmware sleep 120;
