@@ -30,7 +30,15 @@ jobs:
           key: v1-{{ .Branch }}-{{ epoch }}
           paths:
             - /caches/app.tar
-
+      - run:
+          name: Creating keymap Artifact
+          command: |
+            cp /qmk_firmware/ferris_sweep_lassieee.hex /tmp/ferris_sweep_lassieee.hex
+      - store_artifacts:
+          path: /tmp/ferris_sweep_lassieee.hex
+          destination: ferris_sweep_lassieee.hex
+      - store_artifacts:
+          path: /tmp/artifacts
 workflows:
   version: 2
   build-deploy:
