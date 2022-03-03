@@ -7,35 +7,43 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - restore_cache:
-          keys:
-            - v1-{{ .Branch }}
-          paths:
-            - /caches/app.tar
+      #- restore_cache:
+      #    keys:
+      #      - v1-{{ .Branch }}
+      #    paths:
+      #      - /caches/app.tar
+      #- run:
+      #    name: Load Docker image layer cache
+      #    command: |
+      #      set +o pipefail
+      #      docker load -i /caches/app.tar | true
+      #- run:
+      #    name: Build application Docker image
+      #    command: |
+      #      docker build --cache-from=app -t lcasper/34-qmk-ferris-sweep .
+      #- run:
+      #    name: Save Docker image layer cache
+      #    command: |
+      #      mkdir -p /caches
+      #      docker save -o /caches/app.tar lcasper/34-qmk-ferris-sweep
+      #- save_cache:
+      #    key: v1-{{ .Branch }}-{{ epoch }}
+      #    paths:
+      #      - /caches/app.tar
       - run:
-          name: Load Docker image layer cache
+          name: 1
           command: |
-            set +o pipefail
-            docker load -i /caches/app.tar | true
-      - run:
-          name: Build application Docker image
-          command: |
-            docker build --cache-from=app -t lcasper/34-qmk-ferris-sweep .
-      - run:
-          name: Save Docker image layer cache
-          command: |
-            mkdir -p /caches
-            docker save -o /caches/app.tar lcasper/34-qmk-ferris-sweep
-      - save_cache:
-          key: v1-{{ .Branch }}-{{ epoch }}
-          paths:
-            - /caches/app.tar
-      - run:
-          name: Creating keymap Artifact
-          command: |
-            cp /app/qmk_firmware/ferris_sweep_lassieee.hex /tmp/
+            cd /app;
+            docker run -d --rm --name qmk qmkfm/qmk_firmware sleep 120;
+            docker exec -it qmk qmk setup;
+            docker exec -it qmk qmk env;
+            docker exec -it qmk mkdir /qmk_firmware/keyboards/ferris/keymaps/lassieee;
+            for i in config.h keymap.c rules.mk; do docker cp $i qmk:qmk_firmware/keyboards/ferris/keymaps/lassieee/; done;
+            docker exec -it qmk qmk compile -kb ferris/sweep -km lassieee;
+            docker cp qmk:/qmk_firmware/ferris_sweep_lassieee.hex .;
+            docker stop qmk;
       - store_artifacts:
-          path: /tmp/ferris_sweep_lassieee.hex
+          path: /app/ferris_sweep_lassieee.hex
 
 workflows:
   version: 2
