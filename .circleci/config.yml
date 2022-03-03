@@ -31,7 +31,7 @@ jobs:
       #    paths:
       #      - /caches/app.tar
       - run:
-          name: do stuff
+          name: Compile keymap without building image
           command: |
             cd /app;
             docker run -d --rm --name qmk qmkfm/qmk_firmware sleep 120;
