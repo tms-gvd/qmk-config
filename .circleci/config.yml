@@ -49,8 +49,8 @@ jobs:
     docker:
       - image: cibuilds/github:0.10
     steps:
-      - attach_workspace:
-          at: /app
+        #      - attach_workspace:
+        #          at: /app
       - run:
           name: "Publish Release on GitHub"
           command: |
@@ -63,15 +63,15 @@ workflows:
   build-deploy:
     jobs:
       - build:
-          filters:
-            branches:
-              only:
-                - circleci
+          #          filters:
+          #            branches:
+          #              only:
+          #                - circleci
       - publish-github-release:
           requires:
             - build
           filters:
-            branches:
-              ignore: /.*/
+              #            branches:
+              #              ignore: /.*/
             tags:
               only: /^\d+\.\d+\.\d+$/
