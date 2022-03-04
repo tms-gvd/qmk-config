@@ -3,7 +3,8 @@ jobs:
   build:
     working_directory: /app
     docker:
-      - image: docker:17.09.0-ce-git
+      - image: docker:20.10.12-git
+      #- image: docker:17.09.0-ce-git
     steps:
       - checkout
       - setup_remote_docker
@@ -11,8 +12,8 @@ jobs:
           name: Run QMK container and compile keymap
           command: |
             export
-            echo ${CIRCLE_TAG}
-            echo ${CIRCLE_PROJECT_REPONAME}
+            tag=${CIRCLE_TAG}
+            reponame=${CIRCLE_PROJECT_REPONAME}
 #            cd /app;
 #            docker run -d --rm --name qmk qmkfm/qmk_firmware sleep 120;
 #            docker exec -it qmk qmk setup
