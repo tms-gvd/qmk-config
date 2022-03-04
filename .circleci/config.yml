@@ -72,10 +72,10 @@ workflows:
                 - circleci
       - publish_github_release:
           requires:
-            - compile-keymap
+            - compile_keymap
           filters:
             branches:
               only:
                 - circleci
-            tags:
-              only: /^\d+\.\d+\.\d+$/
+#            tags:
+#              only: /^\d+\.\d+\.\d+$/
