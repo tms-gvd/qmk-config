@@ -12,26 +12,23 @@ jobs:
           name: Run QMK container and compile keymap
           command: |
             export
-            tag=$(git tag | sort -V | tail -2 | grep -v latest)
-            $tag
-            git tag | sort -V | tail -2 | grep -v latest
-#            cd /app;
-#            docker run -d --rm --name qmk qmkfm/qmk_firmware sleep 120;
-#            docker exec -it qmk qmk setup
-#            docker exec -it qmk qmk env
-#            docker exec -it qmk mkdir /qmk_firmware/keyboards/ferris/keymaps/lassieee
-#            for i in config.h keymap.c rules.mk; do
-#                docker cp $i qmk:qmk_firmware/keyboards/ferris/keymaps/lassieee/
-#            done
-#            docker exec -it qmk qmk compile -kb ferris/sweep -km lassieee
-#            docker cp qmk:/qmk_firmware/ferris_sweep_lassieee.hex .
-#            docker stop qmk
-#      - store_artifacts:
-#          path: /app/ferris_sweep_lassieee.hex
-#      - persist_to_workspace:
-#          root: /app
-#          paths:
-#            - ferris_sweep_lassieee.hex
+            cd /app;
+            docker run -d --rm --name qmk qmkfm/qmk_firmware sleep 120;
+            docker exec -it qmk qmk setup
+            docker exec -it qmk qmk env
+            docker exec -it qmk mkdir /qmk_firmware/keyboards/ferris/keymaps/lassieee
+            for i in config.h keymap.c rules.mk; do
+                docker cp $i qmk:qmk_firmware/keyboards/ferris/keymaps/lassieee/
+            done
+            docker exec -it qmk qmk compile -kb ferris/sweep -km lassieee
+            docker cp qmk:/qmk_firmware/ferris_sweep_lassieee.hex .
+            docker stop qmk
+      - store_artifacts:
+          path: /app/ferris_sweep_lassieee.hex
+      - persist_to_workspace:
+          root: /app
+          paths:
+            - ferris_sweep_lassieee.hex
 
   publish_github_release:
     docker:
@@ -42,7 +39,7 @@ jobs:
       - run:
           name: "Publish release on GitHub"
           command: |
-            VERSION=${CIRCLE_TAG}
+            VERSION=${git tag | sort -V | tail -1}
             ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} -b "update keymap" /app/ferris_sweep_lassieee.hex
 
 workflows:
@@ -51,17 +48,18 @@ workflows:
     jobs:
       - build:
           filters:
-#            branches:
-#              only:
-#                - circleci
+            branches:
+              only:
+                - circleci
             tags:
               only: /^\d+\.\d+\.\d+$/
-#      - publish_github_release:
-#          requires:
-#            - build
-#          filters:
-#            branches:
-#              only:
-#                - circleci
-##            tags:
-##              only: /^\d+\.\d+\.\d+$/
+      - publish_github_release:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - circleci
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+#              only: /^[0-9]\.[0-9]\.[0-9]$/
