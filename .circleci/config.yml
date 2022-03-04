@@ -12,14 +12,14 @@ jobs:
           command: |
             cd /app;
             docker run -d --rm --name qmk qmkfm/qmk_firmware sleep 120;
-            docker exec -it qmk qmk setup;
-            docker exec -it qmk qmk env;
-            docker exec -it qmk mkdir /qmk_firmware/keyboards/ferris/keymaps/lassieee;
-            for i in config.h keymap.c rules.mk; do;
-                docker cp $i qmk:qmk_firmware/keyboards/ferris/keymaps/lassieee/;
-            done;
-            docker exec -it qmk qmk compile -kb ferris/sweep -km lassieee;
-            docker cp qmk:/qmk_firmware/ferris_sweep_lassieee.hex .;
+            docker exec -it qmk qmk setup
+            docker exec -it qmk qmk env
+            docker exec -it qmk mkdir /qmk_firmware/keyboards/ferris/keymaps/lassieee
+            for i in config.h keymap.c rules.mk; do
+                docker cp $i qmk:qmk_firmware/keyboards/ferris/keymaps/lassieee/
+            done
+            docker exec -it qmk qmk compile -kb ferris/sweep -km lassieee
+            docker cp qmk:/qmk_firmware/ferris_sweep_lassieee.hex .
             docker stop qmk
       - store_artifacts:
           path: /app/ferris_sweep_lassieee.hex
@@ -37,7 +37,7 @@ jobs:
       - run:
           name: "Publish release on GitHub"
           command: |
-            VERSION=<< pipeline.git.tag >>;
+            VERSION=<< pipeline.git.tag >>
             ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} -b "update keymap" /app/ferris_sweep_lassieee.hex
 
 workflows:
