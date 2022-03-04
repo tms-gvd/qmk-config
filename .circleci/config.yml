@@ -50,11 +50,11 @@ workflows:
     jobs:
       - build:
           filters:
-            branches:
-              only:
-                - circleci
-#            tags:
-#              only: /^\d+\.\d+\.\d+$/
+#            branches:
+#              only:
+#                - circleci
+            tags:
+              only: /^\d+\.\d+\.\d+$/
 #      - publish_github_release:
 #          requires:
 #            - build
