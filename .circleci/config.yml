@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  compile-keymap:
     working_directory: /app
     docker:
       - image: docker:17.09.0-ce-git
@@ -45,7 +45,7 @@ jobs:
       - store_artifacts:
           path: /app/ferris_sweep_lassieee.hex
       - persist_to_workspace:
-          root: qmk_firmware
+          root: /app
           paths:
             - ferris_sweep_lassieee.hex
 
@@ -54,12 +54,12 @@ jobs:
       - image: cibuilds/github:0.13
     steps:
       - attach_workspace:
-          at: /app/qmk_firmware
+          at: /app
       - run:
           name: "Publish Release on GitHub"
           command: |
             VERSION=0.1.0;
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ./ferris_sweep_lassieee.hex
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} /app/ferris_sweep_lassieee.hex
 
 workflows:
   version: 2
@@ -73,9 +73,9 @@ workflows:
       - publish-github-release:
           requires:
             - build
-#          filters:
-#            branches:
-#              only:
-#                - circleci
-#            tags:
-#              only: /^\d+\.\d+\.\d+$/
+          filters:
+            branches:
+              only:
+                - circleci
+            tags:
+              only: /^\d+\.\d+\.\d+$/
