@@ -13,6 +13,8 @@ jobs:
           command: |
             export
             tag=$(git tag | sort -V | tail -2 | grep -v latest)
+            $tag
+            git tag | sort -V | tail -2 | grep -v latest
 #            cd /app;
 #            docker run -d --rm --name qmk qmkfm/qmk_firmware sleep 120;
 #            docker exec -it qmk qmk setup
