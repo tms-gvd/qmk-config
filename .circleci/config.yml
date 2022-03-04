@@ -37,7 +37,7 @@ jobs:
       - run:
           name: "Publish release on GitHub"
           command: |
-            VERSION=<< pipeline.git.tag >>
+            VERSION=${CIRCLE_TAG}
             ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} -b "update keymap" /app/ferris_sweep_lassieee.hex
 
 workflows:
