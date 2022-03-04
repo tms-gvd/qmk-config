@@ -4,7 +4,6 @@ jobs:
     working_directory: /app
     docker:
       - image: docker:20.10.12-git
-      #- image: docker:17.09.0-ce-git
     steps:
       - checkout
       - setup_remote_docker
@@ -40,8 +39,6 @@ jobs:
       - run:
           name: "Publish release on GitHub"
           command: |
-            git tag
-            VERSION=$(git tag | sort -V | tail -1)
             ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete $(git tag | sort -V | tail -1)  /app/ferris_sweep_lassieee.hex
 
 workflows:
@@ -64,5 +61,4 @@ workflows:
                 - circleci
             tags:
               only: /^\d+\.\d+\.\d+$/
-#              only: /^[0-9]\.[0-9]\.[0-9]$/
 
