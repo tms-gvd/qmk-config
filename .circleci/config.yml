@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  compile-keymap:
+  compile_keymap:
     working_directory: /app
     docker:
       - image: docker:17.09.0-ce-git
@@ -49,7 +49,7 @@ jobs:
           paths:
             - ferris_sweep_lassieee.hex
 
-  publish-github-release:
+  publish_github_release:
     docker:
       - image: cibuilds/github:0.13
     steps:
