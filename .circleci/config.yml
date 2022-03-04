@@ -10,7 +10,9 @@ jobs:
       - run:
           name: Run QMK container and compile keymap
           command: |
+            export
             echo ${CIRCLE_TAG}
+            echo ${CIRCLE_PROJECT_REPONAME}
 #            cd /app;
 #            docker run -d --rm --name qmk qmkfm/qmk_firmware sleep 120;
 #            docker exec -it qmk qmk setup
@@ -61,4 +63,3 @@ workflows:
 #                - circleci
 ##            tags:
 ##              only: /^\d+\.\d+\.\d+$/
-
