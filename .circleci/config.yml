@@ -12,9 +12,7 @@ jobs:
           name: Run QMK container and compile keymap
           command: |
             export
-            tag="${CIRCLE_TAG}"
-            reponame="${CIRCLE_PROJECT_REPONAME}"
-            git tag
+            tag=$(git tag | sort -V | tail -2 | grep -v latest)
 #            cd /app;
 #            docker run -d --rm --name qmk qmkfm/qmk_firmware sleep 120;
 #            docker exec -it qmk qmk setup
