@@ -65,14 +65,14 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build:
+      - compile_keymap:
           filters:
             branches:
               only:
                 - circleci
-      - publish-github-release:
+      - publish_github_release:
           requires:
-            - build
+            - compile-keymap
           filters:
             branches:
               only:
