@@ -4,7 +4,8 @@
 Keymap compile status on CircleCI:  
 [![CircleCI](https://circleci.com/gh/lassieee/34-QMK-Ferris-Sweep/tree/circleci.svg?style=shield&circle-token=323dc44e5590a9cb161f4ad7d3a6ea98ee515d45)](https://circleci.com/gh/lassieee/34-QMK-Ferris-Sweep/tree/circleci)
 
-
+Check out Releases for my flasheable QMK firmware keymap. No need to compile it yourself :-)  
+Releases are automatically pushed from a CircleCI pipeline whenever a new tag is pushed to the circleci branch.
 
 
 ### Layer 0: Base
@@ -28,7 +29,6 @@ Keymap compile status on CircleCI:
 
 
 
-
 ### Bootmagic
 Bootmagic is enabled with the defaults.
 Pressing and holding down the col 0 row 0 key when plugging in the keyboard makes the microcontroller enter the bootloader.
@@ -40,5 +40,4 @@ QMK Docs:
 
 Keyboard layout editor:
 * http://www.keyboard-layout-editor.com
-
 
