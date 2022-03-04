@@ -44,18 +44,22 @@ jobs:
             docker stop qmk
       - store_artifacts:
           path: /app/ferris_sweep_lassieee.hex
+      - persist_to_workspace:
+          root: qmk_firmware
+          paths:
+            - ferris_sweep_lassieee.hex
 
   publish-github-release:
     docker:
       - image: cibuilds/github:0.13
     steps:
-        #      - attach_workspace:
-        #          at: /app
+      - attach_workspace:
+          at: /app/qmk_firmware
       - run:
           name: "Publish Release on GitHub"
           command: |
-            VERSION=latest;
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} /app/ferris_sweep_lassieee.hex
+            VERSION=0.1.0;
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ./ferris_sweep_lassieee.hex
 
 workflows:
   version: 2
