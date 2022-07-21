@@ -12,13 +12,11 @@ jobs:
           command: |
             export
             cd /app;
-            docker run -d --rm --name qmk qmkfm/qmk_firmware sleep 120;
-            docker exec -it qmk qmk setup
+            docker run -d --rm --name qmk qmkfm/qmk_cli sleep 300;
+            docker exec -it qmk python3 -m pip install qmk
+            docker exec -it qmk qmk setup -y
             docker exec -it qmk qmk env
-            docker exec -it qmk mkdir /qmk_firmware/keyboards/ferris/keymaps/lassieee
-            for i in config.h keymap.c rules.mk; do
-                docker cp $i qmk:qmk_firmware/keyboards/ferris/keymaps/lassieee/
-            done
+            docker cp lassieee qmk:qmk_firmware/keyboards/ferris/keymaps/
             docker exec -it qmk qmk compile -kb ferris/sweep -km lassieee
             docker cp qmk:/qmk_firmware/ferris_sweep_lassieee.hex .
             docker stop qmk
