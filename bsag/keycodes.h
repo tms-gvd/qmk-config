@@ -46,7 +46,7 @@ enum layers {
 
 enum keycodes {
 	// Numword and switch app
-	NUMWORD = SAFE_RANGE,
+	// NUMWORD = SAFE_RANGE,
 
 	OS_SHFT,
     OS_CTRL,
