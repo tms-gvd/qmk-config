@@ -15,15 +15,19 @@
 
 enum layer_number {
   _HOME = 0,
-  _FUN,
   _SYM,
+  _NUM,
+  _NAV,
+  _FUN,
 };
 
 // see https://github.com/ChuseCubr/mini-ryoku for layout details
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_HOME] = LAYOUT_mask(_BASE_LAYOUT),
-  [_FUN] = LAYOUT_mask(_FUN_LAYOUT),
   [_SYM] = LAYOUT_mask(_SYM_LAYOUT),
+  [_NUM] = LAYOUT_mask(_NUM_LAYOUT),
+  [_NAV] = LAYOUT_mask(_NAV_LAYOUT),
+  [_FUN] = LAYOUT_mask(_FUN_LAYOUT),
 };
 
 #include "combos.c"

@@ -12,15 +12,22 @@
 // #define EE_HANDS /* My preference */
 
 /* Combo Settings */
-#define COMBO_TERM 25
+#define COMBO_TERM 40
+#define EXTRA_SHORT_COMBOS
 #define COMBO_ONLY_FROM_LAYER 0
-#define COMBO_SHOULD_TRIGGER
+// #define COMBO_SHOULD_TRIGGER
+
+#define COMBO_MUST_HOLD_MODS
+#define COMBO_HOLD_TERM 400
+
+/* One shot key */
+#define ONESHOT_TIMEOUT 1500
 
 /* Tap Hold Settings */
 
-#define PERMISSIVE_HOLD
-#define QUICK_TAP_TERM 100
-#define TAPPING_TERM 150
+// #define PERMISSIVE_HOLD
+// #define QUICK_TAP_TERM 0
+// #define TAPPING_TERM 250
 
 /* Mouse settings (Defaults converted for 144Hz) */
 

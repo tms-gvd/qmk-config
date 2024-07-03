@@ -7,47 +7,99 @@
 
 /* Defining Combos for non-Vial boards */
 enum combos {
-  WF_ESC,
-  FP_EXC,
-  LU_MINS,
-  UY_QUOT,
+  /* LEFT HAND */
+  /* TOP ROW */
+  // WF,
+  FP,
+  /* MIDDLE ROW */
+  RS,
+  ST,
+  RT,
+  /* BOTTOM ROW */
+  CD,
+  
+  /* RIGHT HAND */
+  /* TOP ROW */
+  LU,
+  // UY,
+  JBSPC,
+  /* MIDDLE ROW */
+  NE,
+  EI,
+  NI,
 
-  WFP_CAPS,
-  NEI_HOME,
-  HCP_SYM,
-  LUY_FUN
+  /* BOTH */
+  GM_CAPSWORD
 };
 
-const uint16_t PROGMEM wf_combo[] = {KC_W, KC_F, COMBO_END};
+/* LEFT HAND */
+/* TOP ROW */
+// const uint16_t PROGMEM wf_combo[] = {KC_W, KC_F, COMBO_END};
 const uint16_t PROGMEM fp_combo[] = {KC_F, KC_P, COMBO_END};
-const uint16_t PROGMEM lu_combo[] = {KC_L, KC_U, COMBO_END};
-const uint16_t PROGMEM uy_combo[] = {KC_U, KC_Y, COMBO_END};
+/* MIDDLE ROW */
+const uint16_t PROGMEM rs_combo[] = {KC_R, KC_S, COMBO_END};
+const uint16_t PROGMEM st_combo[] = {KC_S, KC_T, COMBO_END};
+const uint16_t PROGMEM rt_combo[] = {KC_R, KC_T, COMBO_END};
+/* BOTTOM ROW */
+const uint16_t PROGMEM cd_combo[] = {KC_C, KC_D, COMBO_END};
 
-const uint16_t PROGMEM luy_combo[] = {KC_L, KC_U, KC_Y, COMBO_END};
-const uint16_t PROGMEM nei_combo[] = {KC_N, KC_E, KC_I, COMBO_END};
-const uint16_t PROGMEM hcp_combo[] = {MT_H, MT_COMM, MT_DOT, COMBO_END};
-const uint16_t PROGMEM wfp_combo[] = {KC_W, KC_F, KC_P, COMBO_END};
+/* RIGHT HAND */
+/* TOP ROW */
+const uint16_t PROGMEM lu_combo[] = {KC_L, KC_U, COMBO_END};
+// const uint16_t PROGMEM uy_combo[] = {KC_U, KC_Y, COMBO_END};
+const uint16_t PROGMEM jbspc_combo[] = {KC_J, KC_BSPC, COMBO_END};
+/* MIDDLE ROW */
+const uint16_t PROGMEM ne_combo[] = {KC_N, KC_E, COMBO_END};
+const uint16_t PROGMEM ei_combo[] = {KC_E, KC_I, COMBO_END};
+const uint16_t PROGMEM ni_combo[] = {KC_N, KC_I, COMBO_END};
+
+/* BOTH */
+const uint16_t PROGMEM gm_combo[] = {KC_G, KC_M, COMBO_END};
 
 combo_t key_combos[] = {
-  [WF_ESC] = COMBO(wf_combo, KC_ESC),
-  [FP_EXC] = COMBO(fp_combo, LSFT(KC_1)),
-  [LU_MINS] = COMBO(lu_combo, KC_MINS),
-  [UY_QUOT] = COMBO(uy_combo, KC_QUOT),
+  /* LEFT HAND */
+  /* TOP ROW */
+  // [WF] = COMBO(wf_combo, KC_ENT),
+  [FP] = COMBO(fp_combo, KC_TAB),
+  /* MIDDLE ROW */
+  [RS] = COMBO(rs_combo, OSM(MOD_LCTL)),
+  [ST] = COMBO(st_combo, OSM(MOD_LGUI)),
+  [RT] = COMBO(rt_combo, OSM(MOD_LALT)),
+  /* BOTTOM ROW */
+  [CD] = COMBO(cd_combo, OSM(MOD_LALT)),
 
-  [WFP_CAPS] = COMBO(wfp_combo, KC_CAPS),
-  [NEI_HOME] = COMBO(nei_combo, TO(_HOME)),
-  [HCP_SYM] = COMBO(hcp_combo, TO(_SYM)),
-  [LUY_FUN] = COMBO(luy_combo, TO(_FUN))
+  /* RIGHT HAND */
+  /* TOP ROW */
+  [LU] = COMBO(lu_combo, KC_ENT),
+  // [UY] = COMBO(uy_combo, KC_TAB),
+  [JBSPC] = COMBO(jbspc_combo, TO_FUN),
+  /* MIDDLE ROW */
+  [NE] = COMBO(ne_combo, OSM(MOD_RGUI)),
+  [EI] = COMBO(ei_combo, OSM(MOD_RCTL)),
+  [NI] = COMBO(ni_combo, OSM(MOD_RALT)),
+
+  /* BOTH */
+  [GM_CAPSWORD] = COMBO_ACTION(gm_combo)
 };
 
-bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
-  switch (get_highest_layer(default_layer_state)) {
-		/* you can add cases for layers you would like to exclude */
-		/* for example, I have gaming layers in the `layer_number` enum like so: */
-		// case _GAME1:
-		// case _GAME2:
-		// 	return false;
-		default:
-			return true;
-  }
+// bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
+//   switch (get_highest_layer(default_layer_state)) {
+// 		/* you can add cases for layers you would like to exclude */
+// 		/* for example, I have gaming layers in the `layer_number` enum like so: */
+// 		// case _GAME1:
+// 		// case _GAME2:
+// 		// 	return false;
+// 		default:
+// 			return true;
+//   }
+// }
+
+void process_combo_event(uint16_t combo_index, bool pressed) {
+  switch(combo_index) {
+    case GM_CAPSWORD:
+      if (pressed) {
+        caps_word_on();  // Activate Caps Word!
+      }
+      break;
+	}
 }

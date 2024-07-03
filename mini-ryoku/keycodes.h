@@ -5,39 +5,46 @@
 
 #pragma once
 
+/* On all layers */
+#define MT_SPC LSFT_T(KC_SPC)
+#define MT_ENT RCTL_T(KC_ENT)
+#define OS_LSFT OSM(MOD_LSFT)
+
 /* Base Layer */
-#define MT_Z LGUI_T(KC_Z)
-#define MT_X LALT_T(KC_X)
-#define MT_C LCTL_T(KC_C)
-#define MT_D LSFT_T(KC_D)
-#define MT_V LCTL_T(KC_V)
-
-#define MT_H RSFT_T(KC_H)
-#define MT_COMM RCTL_T(KC_COMM)
-#define MT_DOT RALT_T(KC_DOT)
-#define MT_SLSH RGUI_T(KC_SLSH)
-
-#define LT_TAB LT(_FUN, KC_TAB)
+// left hand
+#define MT_S LALT_T(KC_S)
+#define MT_T LGUI_T(KC_T)
+// right hand
+#define MT_N RGUI_T(KC_N)
+#define MT_E RALT_T(KC_E)
 
 /* Sym Layer */
-#define MT_GRV LGUI_T(KC_GRV)
+// left hand
+#define MT_RPRN LALT_T(KC_RPRN)
+#define MT_COLN LGUI_T(KC_COLN)
+// right hand
+#define MT_DQUO RGUI_T(KC_DQUO)
+#define MT_LBRC RALT_T(KC_LBRC)
+
+/* Num Layer */
+// left hand
 #define MT_2 LALT_T(KC_2)
-#define MT_3 LCTL_T(KC_3)
-#define MT_4 LSFT_T(KC_4)
+#define MT_1 LGUI_T(KC_1)
+// right hand
+#define MT_QUOT RGUI_T(KC_QUOT)
+#define MT_UNDS RALT_T(KC_UNDS)
 
 /* Fun Layer */
-#define MT_F1 LALT_T(KC_F1)
-#define MT_F2 LCTL_T(KC_F2)
-#define MT_F3 LSFT_T(KC_F3)
-
-#define MT_MPRV RSFT_T(KC_MPRV)
-#define MT_MPLY RCTL_T(KC_MPLY)
-#define MT_MNXT RALT_T(KC_MNXT)
-#define MT_MUTE RGUI_T(KC_MUTE)
+// left hand
+// #define MT_F2 LALT_T(KC_F2)
+// #define MT_F1 LGUI_T(KC_F1)
 
 /* Layers */
-#define OSL_SYM OSL(_SYM)
-#define OSL_COPY OSL(_HOME_COPY)
-#define OSL_G2 OSL(_GAME2)
-#define TO_GAME TO(_GAME1)
 #define TO_HOME TO(_HOME)
+#define TO_FUN TO(_FUN)
+#define TO_NAV TO(_NAV)
+// to num and sym layers: holding or one-shot
+#define LT_NUM LT(_NUM, KC_NO)
+// #define LT_NUM OSL(_NUM)
+#define LT_SYM LT(_SYM, KC_NO)
+// #define LT_SYM OSL(_SYM)
