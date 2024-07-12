@@ -12,11 +12,13 @@ enum combos {
   // WF,
   FP,
   /* MIDDLE ROW */
-  RS,
-  ST,
-  RT,
+  // RS,
+  // ST,
+  // RT,
   /* BOTTOM ROW */
+  XC,
   CD,
+  XD,
   
   /* RIGHT HAND */
   /* TOP ROW */
@@ -24,9 +26,13 @@ enum combos {
   // UY,
   JBSPC,
   /* MIDDLE ROW */
-  NE,
-  EI,
-  NI,
+  // NE,
+  // EI,
+  // NI,
+  /* BOTTOM ROW */
+  HCOMM,
+  COMMDOT,
+  HDOT,
 
   /* BOTH */
   GM_CAPSWORD
@@ -41,7 +47,9 @@ const uint16_t PROGMEM rs_combo[] = {KC_R, KC_S, COMBO_END};
 const uint16_t PROGMEM st_combo[] = {KC_S, KC_T, COMBO_END};
 const uint16_t PROGMEM rt_combo[] = {KC_R, KC_T, COMBO_END};
 /* BOTTOM ROW */
+const uint16_t PROGMEM xc_combo[] = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM cd_combo[] = {KC_C, KC_D, COMBO_END};
+const uint16_t PROGMEM xd_combo[] = {KC_X, KC_D, COMBO_END};
 
 /* RIGHT HAND */
 /* TOP ROW */
@@ -52,6 +60,10 @@ const uint16_t PROGMEM jbspc_combo[] = {KC_J, KC_BSPC, COMBO_END};
 const uint16_t PROGMEM ne_combo[] = {KC_N, KC_E, COMBO_END};
 const uint16_t PROGMEM ei_combo[] = {KC_E, KC_I, COMBO_END};
 const uint16_t PROGMEM ni_combo[] = {KC_N, KC_I, COMBO_END};
+/* BOTTOM ROW */
+const uint16_t PROGMEM hcomm_combo[] = {KC_H, KC_COMM, COMBO_END};
+const uint16_t PROGMEM commdot_combo[] = {KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM hdot_combo[] = {KC_H, KC_DOT, COMBO_END};
 
 /* BOTH */
 const uint16_t PROGMEM gm_combo[] = {KC_G, KC_M, COMBO_END};
@@ -62,11 +74,13 @@ combo_t key_combos[] = {
   // [WF] = COMBO(wf_combo, KC_ENT),
   [FP] = COMBO(fp_combo, KC_TAB),
   /* MIDDLE ROW */
-  [RS] = COMBO(rs_combo, OSM(MOD_LCTL)),
-  [ST] = COMBO(st_combo, OSM(MOD_LGUI)),
-  [RT] = COMBO(rt_combo, OSM(MOD_LALT)),
+  // [RS] = COMBO(rs_combo, OSM(MOD_LCTL)),
+  // [ST] = COMBO(st_combo, OSM(MOD_LGUI)),
+  // [RT] = COMBO(rt_combo, OSM(MOD_LALT)),
   /* BOTTOM ROW */
-  [CD] = COMBO(cd_combo, OSM(MOD_LALT)),
+  [XC] = COMBO(xc_combo, OSM(MOD_LCTL)),
+  [CD] = COMBO(cd_combo, OSM(MOD_LGUI)),
+  [XD] = COMBO(xd_combo, OSM(MOD_LALT)),
 
   /* RIGHT HAND */
   /* TOP ROW */
@@ -74,9 +88,13 @@ combo_t key_combos[] = {
   // [UY] = COMBO(uy_combo, KC_TAB),
   [JBSPC] = COMBO(jbspc_combo, TO_FUN),
   /* MIDDLE ROW */
-  [NE] = COMBO(ne_combo, OSM(MOD_RGUI)),
-  [EI] = COMBO(ei_combo, OSM(MOD_RCTL)),
-  [NI] = COMBO(ni_combo, OSM(MOD_RALT)),
+  // [NE] = COMBO(ne_combo, OSM(MOD_RGUI)),
+  // [EI] = COMBO(ei_combo, OSM(MOD_RCTL)),
+  // [NI] = COMBO(ni_combo, OSM(MOD_RALT)),
+  /* BOTTOM ROW */
+  [HCOMM] = COMBO(hcomm_combo, OSM(MOD_RGUI)),
+  [COMMDOT] = COMBO(commdot_combo, OSM(MOD_RCTL)),
+  [HDOT] = COMBO(hdot_combo, OSM(MOD_RALT)),
 
   /* BOTH */
   [GM_CAPSWORD] = COMBO_ACTION(gm_combo)

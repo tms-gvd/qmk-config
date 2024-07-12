@@ -45,6 +45,5 @@
 #define TO_NAV TO(_NAV)
 // to num and sym layers: holding or one-shot
 #define LT_NUM LT(_NUM, KC_NO)
-// #define LT_NUM OSL(_NUM)
 #define LT_SYM LT(_SYM, KC_NO)
-// #define LT_SYM OSL(_SYM)
+#define LT_NAV LT(_NAV, KC_NO)
