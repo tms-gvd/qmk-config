@@ -15,8 +15,8 @@
 
 enum layer_number {
   _HOME = 0,
-  _SYM,
-  _NUM,
+  _SYM = 1,
+  _NUM = 2,
   _NAV,
   _FUN,
 };

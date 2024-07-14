@@ -5,17 +5,10 @@
 
 #pragma once
 
-/* Select hand configuration */
-
-// #define MASTER_LEFT
-// #define MASTER_RIGHT
-// #define EE_HANDS /* My preference */
-
 /* Combo Settings */
 #define COMBO_TERM 40
 #define EXTRA_SHORT_COMBOS
 #define COMBO_ONLY_FROM_LAYER 0
-// #define COMBO_SHOULD_TRIGGER
 
 #define COMBO_MUST_HOLD_MODS
 #define COMBO_HOLD_TERM 400
@@ -23,15 +16,5 @@
 /* One shot key */
 #define ONESHOT_TIMEOUT 1500
 
-/* Tap Hold Settings */
-
-// #define PERMISSIVE_HOLD
-// #define QUICK_TAP_TERM 0
-// #define TAPPING_TERM 250
-
-/* Mouse settings (Defaults converted for 144Hz) */
-
-// #define MOUSEKEY_INTERVAL 6
-// #define MOUSEKEY_MOVE_DELTA 5
-// #define MOUSEKEY_MAX_SPEED 3
-// #define MOUSEKEY_TIME_TO_MAX 77
+/* Tap Dance Settings */
+#define TAPPING_TERM 200
