@@ -44,9 +44,9 @@
 
 #define _NAV_LAYOUT \
 /*   ,-------------------------------------------------.    ,-------------------------------------------------.   */\
-       KC_NO   , CT_CUT  , CT_COPY , CT_PSTE , KC_NO   ,      KC_NO   , KC_TAB  , KC_NO   , KC_NO   , KC_BSPC ,     \
+       KC_NO   , CT_CUT  , CT_COPY , CT_PSTE , KC_NO   ,      KC_NO   , KC_TAB  , CT_TMUX , KC_NO   , KC_BSPC ,     \
 /*   |-------------------------------------------------|    |-------------------------------------------------|   */\
-       KC_NO   , OS_LCTL , OS_LALT , OS_LGUI , KC_NO   ,      KC_LEFT , KC_DOWN , KC_UP   , KC_RGHT , KC_ENT  ,     \
+       OS_LSFT , OS_LCTL , OS_LALT , OS_LGUI , KC_NO   ,      KC_LEFT , KC_DOWN , KC_UP   , KC_RGHT , KC_ENT  ,     \
 /*   |-------------------------------------------------|    |-------------------------------------------------|   */\
        KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_NO   ,      KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_DEL  ,     \
 /*   `-------------------------------------------------|    |-------------------------------------------------'   */\

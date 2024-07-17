@@ -39,6 +39,7 @@
 #define CT_CUT LGUI(KC_X)
 #define CT_COPY LGUI(KC_C)
 #define CT_PSTE LGUI(KC_V)
+#define CT_TMUX LCTL(KC_B)
 
 /* Layers */
 #define TO_HOME TO(_HOME)
