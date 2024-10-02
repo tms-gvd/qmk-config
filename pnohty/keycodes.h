@@ -40,6 +40,11 @@
 #define CT_COPY LGUI(KC_C)
 #define CT_PSTE LGUI(KC_V)
 #define CT_TMUX LCTL(KC_B)
+#define CT_AIG LALT(KC_E)
+#define CT_GRV LALT(KC_GRV)
+#define CT_CIRC LALT(KC_U)
+#define CT_TREM LALT(KC_I)
+#define CT_PSCR LGUI(LSFT(KC_5))
 
 /* Layers */
 #define TO_HOME TO(_HOME)

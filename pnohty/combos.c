@@ -9,7 +9,7 @@
 enum combos {
   /* LEFT HAND */
   /* TOP ROW */
-  // WF,
+  WF,
   FP,
   /* MIDDLE ROW */
   // RS,
@@ -23,7 +23,7 @@ enum combos {
   /* RIGHT HAND */
   /* TOP ROW */
   LU,
-  // UY,
+  UY,
   JBSPC,
   /* MIDDLE ROW */
   // NE,
@@ -40,7 +40,7 @@ enum combos {
 
 /* LEFT HAND */
 /* TOP ROW */
-// const uint16_t PROGMEM wf_combo[] = {KC_W, KC_F, COMBO_END};
+const uint16_t PROGMEM wf_combo[] = {KC_W, KC_F, COMBO_END};
 const uint16_t PROGMEM fp_combo[] = {KC_F, KC_P, COMBO_END};
 /* MIDDLE ROW */
 const uint16_t PROGMEM rs_combo[] = {KC_R, KC_S, COMBO_END};
@@ -54,7 +54,7 @@ const uint16_t PROGMEM xd_combo[] = {KC_X, KC_D, COMBO_END};
 /* RIGHT HAND */
 /* TOP ROW */
 const uint16_t PROGMEM lu_combo[] = {KC_L, KC_U, COMBO_END};
-// const uint16_t PROGMEM uy_combo[] = {KC_U, KC_Y, COMBO_END};
+const uint16_t PROGMEM uy_combo[] = {KC_U, KC_Y, COMBO_END};
 const uint16_t PROGMEM jbspc_combo[] = {KC_J, KC_BSPC, COMBO_END};
 /* MIDDLE ROW */
 const uint16_t PROGMEM ne_combo[] = {KC_N, KC_E, COMBO_END};
@@ -71,7 +71,7 @@ const uint16_t PROGMEM gm_combo[] = {KC_G, KC_M, COMBO_END};
 combo_t key_combos[] = {
   /* LEFT HAND */
   /* TOP ROW */
-  // [WF] = COMBO(wf_combo, KC_ENT),
+  [WF] = COMBO(wf_combo, KC_DEL),
   [FP] = COMBO(fp_combo, KC_TAB),
   /* MIDDLE ROW */
   // [RS] = COMBO(rs_combo, OSM(MOD_LCTL)),
@@ -85,7 +85,7 @@ combo_t key_combos[] = {
   /* RIGHT HAND */
   /* TOP ROW */
   [LU] = COMBO(lu_combo, KC_ENT),
-  // [UY] = COMBO(uy_combo, KC_TAB),
+  [UY] = COMBO(uy_combo, KC_BSPC),
   [JBSPC] = COMBO(jbspc_combo, TO_FUN),
   /* MIDDLE ROW */
   // [NE] = COMBO(ne_combo, OSM(MOD_RGUI)),

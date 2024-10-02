@@ -26,9 +26,9 @@
 /*   |-------------------------------------------------|    |-------------------------------------------------|   */\
        KC_TILD , KC_LPRN , KC_RPRN , KC_COLN , OS_LGUI ,      OS_LGUI , KC_DQUO , KC_LBRC , KC_RBRC , KC_SCLN ,     \
 /*   |-------------------------------------------------|    |-------------------------------------------------|   */\
-       TO_NAV  , KC_GRV  , KC_AT   , KC_AMPR , KC_NO   ,      KC_NO   , KC_HASH , KC_LT   , KC_GT   , KC_NO   ,     \
+       KC_NO   , KC_GRV  , KC_AT   , KC_AMPR , KC_NO   ,      KC_NO   , KC_HASH , KC_LT   , KC_GT   , KC_NO   ,     \
 /*   `-------------------------------------------------|    |-------------------------------------------------'   */\
-                                     KC_NO   , KC_NO   ,      KC_ESC  , LT_NAV
+                                     KC_NO   , KC_NO   ,      KC_ESC  , TO_NAV
 /*                                 `-------------------'    `-------------------'                                 */
 
 #define _NUM_LAYOUT \
@@ -44,11 +44,11 @@
 
 #define _NAV_LAYOUT \
 /*   ,-------------------------------------------------.    ,-------------------------------------------------.   */\
-       KC_NO   , CT_CUT  , CT_COPY , CT_PSTE , KC_NO   ,      KC_NO   , KC_TAB  , CT_TMUX , KC_NO   , KC_BSPC ,     \
+       KC_NO   , CT_CUT  , CT_COPY , CT_PSTE , KC_NO   ,      KC_NO   , KC_TAB  , CT_TMUX , CT_PSCR , KC_BSPC ,     \
 /*   |-------------------------------------------------|    |-------------------------------------------------|   */\
        OS_LSFT , OS_LCTL , OS_LALT , OS_LGUI , KC_NO   ,      KC_LEFT , KC_DOWN , KC_UP   , KC_RGHT , KC_ENT  ,     \
 /*   |-------------------------------------------------|    |-------------------------------------------------|   */\
-       KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_NO   ,      KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_DEL  ,     \
+       CT_CIRC , CT_TREM , CT_AIG  , CT_GRV  , KC_NO   ,      KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_DEL  ,     \
 /*   `-------------------------------------------------|    |-------------------------------------------------'   */\
                                      KC_NO   , KC_NO   ,      KC_LSFT , TO_HOME
 /*                                 `-------------------'    `-------------------'                                 */
