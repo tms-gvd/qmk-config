@@ -32,14 +32,12 @@ Combos are enabled on the base layer only (`COMBO_ONLY_FROM_LAYER 0`).
 | `C` + `D` | One-shot Left GUI |
 | `X` + `D` | One-shot Left Alt |
 | `L` + `U` | Enter |
-| `U` + `Y` | Backspace |
+| `U` + `Y` | Escape |
 | `J` + `Backspace` | Fun layer |
 | `H` + `,` | One-shot Right GUI |
 | `,` + `.` | One-shot Right Control |
 | `H` + `.` | One-shot Right Alt |
 | `G` + `M` | Caps Lock |
-
-Several middle-row modifier combos are defined in source but currently commented out — see `combos.c`.
 
 ## Notable features
 
@@ -99,6 +97,6 @@ Or drag `ferris_sweep_pnohty_helios.uf2` onto the RP2040 bootloader drive.
 | `layout.h` | Colemak-DH and layer key assignments |
 | `combos.c` | Combo definitions and actions |
 | `keycodes.h` | Custom keycode and layer aliases |
-| `config.h` | Combo, one-shot, and tap-dance tuning |
+| `config.h` | Combo and one-shot tuning |
 | `rules.mk` | Enabled QMK features |
 | `ferris_sweep_pnohty_helios.uf2` | Pre-built firmware backup (copied by `build.sh`) |

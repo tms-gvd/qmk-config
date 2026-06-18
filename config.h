@@ -15,6 +15,3 @@
 
 /* One shot key */
 #define ONESHOT_TIMEOUT 1500
-
-/* Tap Dance Settings */
-#define TAPPING_TERM 200

@@ -11,30 +11,6 @@
 #define OS_LALT OSM(MOD_LALT)
 #define OS_LGUI OSM(MOD_LGUI)
 
-/* Base Layer */
-// left hand
-#define MT_S LALT_T(KC_S)
-#define MT_T LGUI_T(KC_T)
-// right hand
-#define MT_N RGUI_T(KC_N)
-#define MT_E RALT_T(KC_E)
-
-/* Sym Layer */
-// left hand
-#define MT_RPRN LALT_T(KC_RPRN)
-#define MT_COLN LGUI_T(KC_COLN)
-// right hand
-#define MT_DQUO RGUI_T(KC_DQUO)
-#define MT_LBRC RALT_T(KC_LBRC)
-
-/* Num Layer */
-// left hand
-#define MT_2 LALT_T(KC_2)
-#define MT_1 LGUI_T(KC_1)
-// right hand
-#define MT_QUOT RGUI_T(KC_QUOT)
-#define MT_UNDS RALT_T(KC_UNDS)
-
 /* Editing */
 #define CT_WDEL LALT(KC_BSPC) // delete word backward (macOS)
 
@@ -59,7 +35,3 @@
 #define LT_NUM MO(_NUM)
 #define LT_SYM MO(_SYM)
 #define LT_NAV MO(_NAV)
-
-/* Tap Dance */
-// #define GUI_SYM TD(TD_GUI_SYM)
-// #define CTL_NUM TD(TD_CTL_NUM)
