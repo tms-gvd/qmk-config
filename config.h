@@ -5,6 +5,9 @@
 
 #pragma once
 
+/* Debounce (QMK default is 5 ms) */
+#define DEBOUNCE 8
+
 /* Combo Settings */
 #define COMBO_TERM 40
 #define EXTRA_SHORT_COMBOS
